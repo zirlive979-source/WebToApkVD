@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WebToApkVD" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/brand_bg</item>
+        <item name="colorPrimaryDark">@color/brand_bg</item>
+        <item name="colorAccent">@color/brand_neon_green</item>
+        <item name="android:windowBackground">@color/brand_bg</item>
+        <item name="android:statusBarColor">@color/brand_bg</item>
+    </style>
+</resources>

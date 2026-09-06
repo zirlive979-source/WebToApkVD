@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Icon yang diupload user lewat form, dipakai jadi launcher icon APK.
+    // Path di-namespace "webtoapkvd_icons" karena bucket ini kemungkinan
+    // dipakai bareng app lain juga.
+    match /webtoapkvd_icons/{fileName} {
+      allow read: if true;
+      allow write: if request.resource.size < 2 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

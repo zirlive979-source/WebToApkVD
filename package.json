@@ -1,0 +1,14 @@
+{
+  "name": "webtoapkvd-build-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Script yang dipanggil GitHub Actions untuk patch Android template & bundle situs offline",
+  "scripts": {
+    "configure": "node configure-template.js",
+    "download-site": "node site-downloader.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "sharp": "^0.33.5"
+  }
+}

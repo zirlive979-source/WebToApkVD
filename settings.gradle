@@ -1,0 +1,2 @@
+rootProject.name = "WebToApkVD-Template"
+include ':app'

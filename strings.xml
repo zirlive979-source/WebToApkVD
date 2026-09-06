@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tiga nilai di bawah ini di-overwrite otomatis oleh
+         scripts/configure-template.js sebelum gradle build dijalankan. -->
+    <string name="app_name">WebToApkVD Template</string>
+    <string name="target_url">https://example.com</string>
+    <string name="build_mode">online</string>
+</resources>

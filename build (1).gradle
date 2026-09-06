@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.webtoapkvd.template"
+    compileSdk 34
+
+    defaultConfig {
+        // applicationId ini yang di-patch otomatis oleh scripts/configure-template.js
+        // sesuai "package_name" yang diisi user di form / workflow_dispatch input
+        applicationId "com.webtoapkvd.template"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            // Sengaja TIDAK diberi signingConfig di sini.
+            // Gradle akan menghasilkan app-release-unsigned.apk,
+            // lalu ditandatangani manual oleh apksigner di GitHub Actions
+            // (lihat .github/workflows/build-apk.yml) memakai keystore asli.
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.webkit:webkit:1.11.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}

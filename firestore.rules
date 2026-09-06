@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Riwayat build APK. Nama koleksi di-namespace "webtoapkvd_jobs" karena
+    // project Firebase ini kemungkinan dipakai bareng app lain juga.
+    // Baca publik (dipakai buat halaman "Riwayat" & status polling di
+    // frontend). Tulis HANYA lewat Cloud Functions (Admin SDK melewati rules
+    // ini), jadi client tidak bisa mengubah status build.
+    match /webtoapkvd_jobs/{jobId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
